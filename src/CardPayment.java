@@ -13,7 +13,10 @@ public class CardPayment extends Payment {
     public void processPayment() {
         System.out.println("Authorizing card payment for " + cardHolderName + " ...");
     }
-    public void validateCard() {
+
+    @Override
+    public boolean validate() {
         System.out.println("Validating card number format...");
+        return cardNumber != null && cardNumber.length() >= 8 && expiryDate != null;
     }
 }

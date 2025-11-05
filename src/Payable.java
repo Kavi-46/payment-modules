@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface Payable {
+public interface Payable {
+    boolean validate();
+    String getReference();
 }

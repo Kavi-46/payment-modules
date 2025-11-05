@@ -17,6 +17,9 @@ public class Main {
         creditCard.generateReceipt();
         debitCard.generateReceipt();
 
+        creditCard.applyDiscount(10);
+        debitCard.applyDiscount(5);
+
         ArrayList<Payment> payments = new ArrayList<>();
         payments.add(cod);
         payments.add(bankTransfer);
@@ -25,6 +28,9 @@ public class Main {
 
         for (Payment p : payments) {
             p.processPayment();
+            p.generateReceipt();
         }
+        Payable payable = creditCard;
+        System.out.println("Reference via Payable: " + payable.getReference());
     }
 }

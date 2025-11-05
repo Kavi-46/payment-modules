@@ -18,4 +18,9 @@ public class BankTransfer extends Payment {
 
         markAsCompleted();
     }
+    @Override
+    public boolean validate() {
+        System.out.println("Validating bank account details...");
+        return accountNumber != null && accountNumber.length() > 5;
+    }
 }
